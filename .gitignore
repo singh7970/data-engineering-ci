@@ -10,8 +10,7 @@ env
 # Logs
 *.log
 
-# Data files
-data/
+
 *.csv
 *.parquet
 
