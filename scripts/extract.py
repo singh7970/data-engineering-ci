@@ -4,11 +4,8 @@
 
 
 
-import pandas as pd
-from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_PATH = BASE_DIR / "data" / "sales.csv"
+import pandas as pd
 
 def extract():
-    return pd.read_csv(DATA_PATH)
+    return pd.read_csv("data/sales.csv")
