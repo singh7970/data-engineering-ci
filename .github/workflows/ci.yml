@@ -1,0 +1,50 @@
+# # Definition: GitHub Actions
+
+# GitHub Actions =
+
+# A free automation tool that runs workflows on code changes
+
+# 🧠 FULL CI FLOW
+
+# You push code
+
+# GitHub creates Linux server
+
+# Code is downloaded
+
+# Python is installed
+
+# Tests run automatically
+
+# Pass / Fail shown in UI
+
+
+
+
+
+
+
+name: Data Engineering CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-data-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run data tests
+      run: pytest tests/
